@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<main class="contact-us">
+    <div class="banner">
+      <img src="{% static './assets/images/bg-banner.png' %}" alt="" class="img-fluid w-100">
+      <h1 class="text-center">
+        About Us
+      </h1>
+    </div>
+    <section class="container mt-5 mb-5">
+      <div class="row mt-5">
+        <div class="col-md-4">
+          <img src="https://placeimg.com/640/480/any" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-8 animate__animated animate__fadeInRight">
+          <h2 class="text-center">Creating Collab Videos</h2>
+          <p>After sending a bunch of proposals to a bunch of YouTubers, you’re bound to receive a few responses.
+             Once someone agrees to collaborate with you, you can begin working on video ideas.
+            <br>
+            <br>
+            Give yourself a better chance at attracting more viewers by purchasing a few thousand high-quality YouTube 
+            Views from a reputable provider. Bought views will make your videos look more attractive, 
+            helping you gain more organic views by making your videos seem popular in the eyes of casual viewers.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-5">
+
+        <div class="col-md-8  animate__animated animate__fadeInLeft  animate__delay-1s">
+          <h2 class="text-center">Audience Retention</h2>
+          <p>You have to do everything you can to turn your new subscribers into TRUE FANS of yours.
+            Now that you have all these new subscribers, the next challenge would be to keep them 
+            subscribed for as long as possible. Take what you learned from your collaborator 
+            and give your new subscribers even more reasons to tune in to your channel.
+          </p>
+        </div>
+        <div class="col-md-4">
+          <img src="https://placeimg.com/640/480/any" alt="" class="img-fluid">
+        </div>
+      </div>
+    </section>
+
+    <section class="container mt-3">
+      <h3 class="text-center">Our Amazing Team</h3>
+      <p class="pt-2 pb-3 text-center">Meet the team</p>
+      <div class="team slider" data-slick='{"slidesToShow": 3, "slidesToScroll": 1}'>
+
+        <!-- team 1 -->
+        {% for ytuber in teams %}
+          <div class="card border-0 text-center  ml-3 mr-3">
+            <img src="{{ ytuber.photo.url}}" class="card-img-top" alt="team-member">
+            <div class="card-body">
+              <h5 class="card-title">{{ ytuber.first_name }} {{ ytuber.last_name }}</h5>
+              <p class="card-text">{{ ytuber.role }}</p>
+              <a href="#" class="btn btn-accent btn-block">Make a collabration</a>
+              <div class="text-center mt-2">
+                <button class="btn btn-accent"> <i class="fab fa-facebook-f fa-lg	"></i> </button>
+                <button class="btn btn-accent"> <i class="fab fa-linkedin-in fa-lg	"></i> </button>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+
+
+      </div>
+
+      <div class="controls d-flex justify-content-center mt-2 mb-2">
+        <div class="d-flex">
+          <i class="fa fa-angle-left team-left"></i>
+          <i class="fa fa-angle-right team-right"></i>
+        </div>
+      </div>
+    </section>
+  </main>
+
+{% endblock %}
