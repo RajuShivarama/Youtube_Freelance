@@ -34,4 +34,4 @@ The aim of the project is to help the clients to promote their products by reach
 
 #### Preview
 
-![Alt text](/preview.png "Optional title")
+![Alt text](/tuber.png "Optional title")
